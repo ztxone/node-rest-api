@@ -1,5 +1,5 @@
 // @ts-ignore
-import supabase from "./database.ts"
+import supabase from "./database.js"
 
 
 try {
