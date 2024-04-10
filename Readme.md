@@ -1,9 +1,11 @@
 # Nodejs REST Api with Auth 
 ---
 This project built with:
+
 - Nodejs with Typrscript
 - Express
 - Nodemon
+- Auth & DB with Supabase
 
 
 
