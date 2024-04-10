@@ -5,8 +5,8 @@ export const post_singup = async (req, res) => {
 
   let {email, password, username} = req.body
 try {
+  
   // Insert a new user into SB auth
-
   let authId = await createAuthUser(email, password)
 
   // Insert a new user into SB table "user"
