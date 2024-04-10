@@ -4,8 +4,6 @@ import cors from "cors"
 import { config } from 'dotenv'
 import { root_router } from './api/root_router.js'
 import { initModules } from './initModules.js'
-
-import http from "http"
 import cookieParser from "cookie-parser"
 import compression from "compression"
 
@@ -34,20 +32,20 @@ const init = async () => {
   let port = process.env.PORT || 8080
 
   const server = app.listen(port, () => {
-    console.log(`Server started at http://localhost:${port}`);
-  });
+    console.log(`Server started at http://localhost:${port}`)
+  })
 
-  // process.on('SIGTERM', () => {
-  //   server.close(() => {
-  //     process.exit(0);
-  //   });
-  // });
+  process.on('SIGTERM', () => {
+    server.close(() => {
+      process.exit(0)
+    })
+  })
 
-  // process.on('SIGINT', () => {
-  //   server.close(() => {
-  //     process.exit(0);
-  //   });
-  // });
+  process.on('SIGINT', () => {
+    server.close(() => {
+      process.exit(0)
+    })
+  })
 }
 
 init()
